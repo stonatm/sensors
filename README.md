@@ -73,7 +73,7 @@ dist.init(36, dist.ESP32)
 # raspberry pi pico case init
 dist.init(26, dist.PICO)
 # read measured distance
-print(dist.distance())
+print(dist.distance_cm())
 ```
 ___
 ```
