@@ -67,7 +67,7 @@ Parameters: none
 ___
 ### example
 ```
-# ULTRASINIC SENSOR
+# INFRARED SENSOR
 # import library
 from distance import sharp1080 as dist
 # esp8266 case init
@@ -81,7 +81,7 @@ print(dist.distance_cm())
 ```
 ___
 ```
-# INFRARED SENSOR
+# ULTRASONIC SENSOR
 # import library
 from distance import hcsr04 as dist
 # init sensor
