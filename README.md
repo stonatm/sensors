@@ -5,6 +5,10 @@ Simple micropython libraries for various sensors
 
 Simple library which used for **HC-SR04** ultrasonic distance sensor and **Sharp GP2Y0A21YK** (10-80cm range) infrared distance sensor.
 Source file: [distance.py](distance.py)
+
+**WARNING:**
+The Sharp infrared distance sensor can return a voltage as high as 2.6V above the maximum allowable input voltage for the AD pin on the ESP8266 (1V). This applies to all separate modules like ESP-12, ESP-07 and similar that do not have a onboard resistor voltage divider at the AD input. In this case a resistor divider with values of 220kohm and 100kohm should be used.
+![divider.jpg](divider.jpg)
 ___
 ```
 class hcsr04
