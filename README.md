@@ -89,3 +89,80 @@ dist.init(4, 5)
 # measure distance
 print(dist.distance_m())
 ```
+
+
+
+## dallas.py
+A simple library to support the dallas **ds1820** and **ds18b20** temperature sensor. Only conversion and temperature reading for one sensor per pin is implemented. Communication with the sensor is done bypassing the sensor address.
+Parasite power mode is not implemented.
+Source file: [dallas.py](dallas.py)
+
+### ds1820
+Class for ds1820 temperature sensor with 9 bit resolution (temperature changes by 0.5°C).
+___
+```
+class ds1820
+```
+___
+Initialise and configure pins used by sensor.
+```
+dallas.ds1820.init(pin)
+```
+parameters:
+- **pin** - sensor DQ pin
+___
+Send convert command to begin measure temperature
+```
+dallas.ds1820.convert(pin)
+```
+parameters:
+- **pin** - sensor DQ pin
+___
+Send read command to read measurement temperature
+```
+dallas.ds1820.read(pin)
+```
+parameters:
+- **pin** - sensor DQ pin
+___
+
+### ds18b20
+Class for ds18b20 temperature sensor with 12 bit resolution (temperature changes by 0.0625°C).
+___
+```
+class ds18b20
+```
+___
+Initialise and configure pins used by sensor.
+```
+dallas.ds18b20.init(pin)
+```
+parameters:
+- **pin** - sensor DQ pin
+___
+Send convert command to begin measure temperature
+```
+dallas.ds18b20.convert(pin)
+```
+parameters:
+- **pin** - sensor DQ pin
+___
+Send read command to read measurement temperature
+```
+dallas.ds18b20.read(pin)
+```
+parameters:
+- **pin** - sensor DQ pin
+___
+
+## example
+```
+# model ds18b20
+import time
+from dallas import ds18b20 as ds
+ds.init(4)
+ds.convert(4)
+# wait 750ms to end of measure temperature
+time.sleep(0.75)
+print("temperature: " + str(ds.read(4)))
+```
